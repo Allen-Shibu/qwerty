@@ -24,14 +24,15 @@
             $email = $_POST['email'];
             $p = $_POST['password'];
             $rp = $_POST['repassword'];
-            $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
-            $repassword = password_hash($_POST["repassword"], PASSWORD_DEFAULT);
-
-            if(strpos($email, "gectr.ac.in")){
+            
+            if(strpos($email, "gectr.ac.in")!==false){
+                $password = password_hash($p, PASSWORD_DEFAULT);
                 if($rp == $p){
                     $sql = "INSERT INTO userdata (name, email, password) VALUES ('$name', '$email', '$password')";
                     if(mysqli_query($conn, $sql)){
-                        // echo "registered successfully";
+                        header("localtion: login.php");
+                        exit();
+                        
                 }
                 }else{
                     echo "<script>alert('password confirmation failed');</script>";
@@ -44,5 +45,4 @@
             // echo "couldn't connect to the server";
         }
     }
-
 ?>

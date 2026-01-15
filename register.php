@@ -1,6 +1,6 @@
 <?php
 include ('managedb.php');
-?>d
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +14,7 @@ include ('managedb.php');
         <!-- ;lkajs,,mkndf -->
         <div class="datas">
             <form id="registerform" method="POST">
-                <label id="title">register</label>
+                <label id="title">Create Your Account</label>
                 <input class="signupinput" name = 'name' type="text" placeholder="Full name"><br>
                 <input class="signupinput" name = 'email' type="text" placeholder="email address"><br>
                 <input class="signupinput" name = 'password' type="password" placeholder="password"><br>
