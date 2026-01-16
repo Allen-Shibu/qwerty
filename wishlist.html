@@ -29,7 +29,7 @@
 </head>
 <body>
     <div class="flex min-h-screen">
-        <aside id="sidebar" class="w-64 h-screen bg-gray-50 py-6 px-10 flex flex-col sticky top-0 transition-all duration-300 dark:bg-[#212B36]">
+        <aside id="sidebar" class="w-64 h-screen bg-gray-50 py-6 px-10 flex flex-col fixed left-0 top-0 overflow-y-auto transition-all duration-300 dark:bg-[#212B36]">
           <div id="sidebar-header" class="flex flex-row gap-16 whitespace-nowrap">
             <a href="market-place.html"><div id="sidebar-logo">
               <img src="logo_light_mode.png" class="h-22 w-14 pb-6 mb-6 ml-6 block dark:hidden">
@@ -116,7 +116,7 @@
 
 </aside>
 
-        <main class="flex-1 bg-white p-6 flex flex-col dark:bg-[#161C24]">
+        <main class="ml-64 flex-1 bg-white p-6 flex flex-col dark:bg-[#161C24]">
               <header class="h-16 bg-white border-b border-gray-50 mb-6 dark:bg-[#161C24]">
                 <div class="flex justify-between items-center h-full">
                   
@@ -168,15 +168,9 @@
             </header>
             
             <div class="flex-1 ml-10">
-                <div>
                     <h1 class="text-black dark:text-white text-4xl font-bold">Your Wishlist</h1>
-                   <img src="test.jpg" class="w-83 h-66 rounded-2xl object-cover mt-10">
-                   <div>
-                    <p class="font-bold dark:text-white">Lenovo Thinkpad</p>
-                    <p class="dark:text-white">Allen Shibu</p>
-                    <span class="font-semibold text-2xl dark:text-white">$1,999.0</span>
-                   </div>
-                </div>
+                    <div class="wishlist-grid">
+                    </div>
             </div>
         </main>
     </div>
