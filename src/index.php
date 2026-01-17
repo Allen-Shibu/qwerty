@@ -169,6 +169,7 @@
             <h1 class="ml-5 text-5xl font-bold text-grey-800">Sell your item</h1>
             <hr class="border-t-2 border-[#F0B100] my-6 relative z-0">
             
+            <form method="post" action="imagepost.php" enctype="multipart/form-data">
             <div class="flex flex-row">
                   <div>            
                     <!-- <label class="ml-5 text-4xl text-gray-600 font-medium underline">Enter the Product details</label><br> -->
@@ -177,38 +178,57 @@
                      <!-- product name -->
                     <label class="block text-2xl font-medium text-gray-600 ml-5">name</label>
                     <input
+                    name = 'pname'
                     type="text"
                     placeholder="toolkit"
                     class="border-b-3 border-[#F0B100] outline-0 py-2 px-3 ml-4 w-100 rounded bg-gray-200"
                     ><br><br>
-                                         <!-- product name -->
+                                         <!-- product information -->
                     <label class="block text-2xl font-medium text-gray-600 ml-5">description </label>
                     <textarea
                     type="text"
+                    name="pdescription"
                     placeholder="detailed product description"
                     class="outline-0 border-b-3 border-[#F0B100] rounded-md-3 py-2 px-3 ml-4 w-100 rounded h-40 bg-gray-200 "
                     ></textarea><br><br>
-                                         <!-- product name -->
+                                         <!-- product price -->
                     <label class="block text-2xl font-medium text-gray-600 ml-5">Price</label>
                     <input
                     type="text"
                     placeholder="$$$"
+                    name = 'pprice'
                     class="outline-0 border-b-3 border-[#F0B100] bg-gray-200 py-2 px-3 ml-4 w-100 rounded"
                     ><br><br>
 
-                    <!-- product name -->
+                    <!-- product details -->
                     <label class="block text-2xl font-medium text-gray-600 ml-5">other details</label>
                     <input
                     type="text"
+                    name="pdetails"
                     placeholder="contact details, locations etc"
                     class="outline-0 border-b-3 border-[#F0B100] bg-gray-200 py-2 px-3 ml-4 w-100 rounded">
-                    </div>
-                  <div class="cursor-pointer flex justify-center mt-10 w-2/3 h-90%  bg-contain ml-10 items-center border-2 border-dashed border-[#b38402] rounded-2xl hover:bg-[#ffd76a71] transition duration-200 relative">
-                    <label for='file-upload' class=" text-[100px] text-[#b38402]">+</label>
-                    <input type="file" id="file-input" multiple class="absolute inset-0 opacity-0">
                   </div>
+                  <div class="cursor-pointer flex justify-center mt-10 w-2/3 h-90%  bg-contain ml-10 items-center border-2 border-dashed border-[#b38402] rounded-2xl hover:bg-[#ffd76a71] transition duration-200 relative">
+                    <label for='file-upload' class=" text-[100px] text-[#b38402] cursor-pointer">+</label>
+                    <input name='image' type="file" id="file-input" multiple class="absolute inset-0 opacity-0">
+                  </div></div>
+                  <div id="imageuploads" class="items-center grid grid-cols-5 gap-3 mt-10 h-100 w-90% rounded "></div>
+                  
+                  <!-- upload button -->
+                   <?php
+                   include ('imagepost.php')
+                   ?>
+                <div class="fixed bottom-4 right-4 flex gap-3 p-3 rounded-full">
+
+
+                  
+                    <button id='postbtn' name="postbtn" type='submit' class="bg-yellow-500 px-4 py-2 rounded-full text-4xl shadow-[0_10px_20px_rgba(0,0,0,0.6)] z-50 w-50 font-bold text-white hover:scale-110 transition-transform duration-150">Post</button>
+                  </form>
+                  
+                </div>
+
         </main>
-    </div>
     <script src="selling.js"></script>
+    <script src="marketplace.js"></script>
 </body>
 </html>

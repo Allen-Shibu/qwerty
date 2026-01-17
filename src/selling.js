@@ -79,3 +79,20 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 })
+
+const preview = document.getElementById('imageuploads');
+const imageInput = document.getElementById('file-input');
+imageInput.addEventListener('change', ()=> {
+  // preview.innerHTML = '';
+  [...imageInput.files].forEach(file=>{
+    const img = document.createElement("img")
+    img.src = URL.createObjectURL(file);
+    img.className = "ml-3 h-50 w-full object-cover rounded-lg";
+    preview.appendChild(img);
+  })
+})
+
+const postbtn = document.getElementById('postbtn');
+postbtn.addEventListener('change', ()=>{
+  
+})
