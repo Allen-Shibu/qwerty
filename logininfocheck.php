@@ -22,7 +22,9 @@
                 if (mysqli_num_rows($result) === 1) {
                     $row = mysqli_fetch_assoc($result);
                     $hashedPassword = $row['password'];
+                    setcookie("email", $email);
                     echo $hashedPassword;
+                    
 
                     if (password_verify($password, $hashedPassword)) {
                         echo "Login success";
