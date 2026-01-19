@@ -6,7 +6,7 @@ include ('managedb.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="styles.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Document</title>
 </head>
 <body>
@@ -20,7 +20,9 @@ include ('managedb.php');
                 <input class="signupinput" name = 'password' type="password" placeholder="password"><br>
                 <input class="signupinput" name = 'repassword' type="password" placeholder="confirm password"><br>
                 <br><br>
-                <button type="submit" class="registerbtn"> Sign up</button><br><br>
+
+                <a href="market-place.html"><button type="submit" class="registerbtn"> Sign up</button><br><br></a>
+                
                 <Label id="haveanaccount">i have an account</label>
                 <a href="login.php" id="loginredirectbutton">Login</a>
             </form>
