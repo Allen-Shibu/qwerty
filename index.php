@@ -1,6 +1,6 @@
-<?php
-include ('managedb.php');
-?>
+//<?php
+//include ('managedb.php');
+//?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
