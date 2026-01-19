@@ -5,12 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="loginstyles.css">
-    <title>Document</title>
-    <!-- <script src="login.js" defer></script> -->
+    <title>Login Page</title>
+    
 </head>
 <body>
     <div id="logincontainer">
-        <!-- ;lkajs,,mkndf -->
         <div class="Logindatas">
             <form id="Loginform" method="POST" action="logininfocheck.php">
                 <?php
