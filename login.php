@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="loginstyles.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" type="text/css" href="loginstyles.css">
     <title>Document</title>
     <!-- <script src="login.js" defer></script> -->
 </head>
@@ -23,7 +23,7 @@
                 <br>
                 <button type="submit" class="registerbtn" id="loginbtn"> Sign in</button><br>
                 <Label id="haveanaccount">i don't have an account</label>
-                <a href="login.php" id="loginredirectbutton">register</a>
+                <a href="index.php.php" id="loginredirectbutton">register</a>
 
             </form>
         </div>
