@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
 const preview = document.getElementById('imageuploads');
 const imageInput = document.getElementById('file-input');
 imageInput.addEventListener('change', ()=> {
-  // preview.innerHTML = '';
+  
   [...imageInput.files].forEach(file=>{
     const img = document.createElement("img")
     img.src = URL.createObjectURL(file);
