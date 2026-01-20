@@ -83,14 +83,20 @@ document.addEventListener("DOMContentLoaded", () => {
 const preview = document.getElementById('imageuploads');
 const imageInput = document.getElementById('file-input');
 imageInput.addEventListener('change', ()=> {
-  
+  if(imageInput.files.length <=3){
   [...imageInput.files].forEach(file=>{
     const img = document.createElement("img")
     img.src = URL.createObjectURL(file);
     img.className = "ml-3 h-50 w-full object-cover rounded-lg";
-    preview.appendChild(img);
-  })
-})
+    if(preview.childElementCount<3){
+      preview.appendChild(img);
+    }else{
+      alert('maximum upload limit reached')
+    }
+    })}
+  else{
+    alert('maximum upload limit reached');
+  }})
 
 const postbtn = document.getElementById('postbtn');
 postbtn.addEventListener('change', ()=>{
