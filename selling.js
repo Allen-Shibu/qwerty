@@ -11,6 +11,17 @@ const MainContent = document.getElementById("main");
 ToggleBtn.addEventListener("click", () => {
   const isOpen = SideBar.classList.contains("w-64");
 
+<<<<<<< HEAD
+ToggleBtn.addEventListener('click', () => {
+    const isOpen = SideBar.classList.contains("w-64");
+    if (isOpen) {
+        
+        SideBar.classList.remove('w-64', 'px-10')
+        SideBar.classList.add('w-29', "px-9.5")
+        
+        Sidebar_Logo.classList.add('hidden')
+        SidebarText.classList.add("hidden");
+=======
   if (isOpen) {
     SideBar.classList.remove("w-64", "px-10");
     SideBar.classList.add("w-29", "px-9.5");
@@ -20,6 +31,7 @@ ToggleBtn.addEventListener("click", () => {
 
     Sidebar_Logo.classList.add("hidden");
     SidebarText.classList.add("hidden");
+>>>>>>> ae84a1c4dd197630d07e95ec165d078a6d1334a4
 
     header.classList.remove("gap-16");
     header.classList.add("justify-center");
@@ -84,14 +96,35 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 })
 
+
 const preview = document.getElementById('imageuploads');
 const imageInput = document.getElementById('file-input');
 imageInput.addEventListener('change', ()=> {
+<<<<<<< HEAD
+  if(imageInput.files.length <=3){
+=======
   preview.innerHTML = '';
+>>>>>>> ae84a1c4dd197630d07e95ec165d078a6d1334a4
   [...imageInput.files].forEach(file=>{
     const img = document.createElement("img")
     img.src = URL.createObjectURL(file);
     img.className = "ml-3 h-50 w-full object-cover rounded-lg";
+<<<<<<< HEAD
+    if(preview.childElementCount<3){
+      preview.appendChild(img);
+    }else{
+      alert('maximum upload limit reached')
+    }
+    })}
+  else{
+    alert('maximum upload limit reached');
+  }})
+
+const postbtn = document.getElementById('postbtn');
+postbtn.addEventListener('change', ()=>{
+
+})
+=======
     preview.appendChild(img);
     
   })
@@ -179,3 +212,4 @@ postbtn.addEventListener('click', async (e) => {
 });
 
 
+>>>>>>> ae84a1c4dd197630d07e95ec165d078a6d1334a4
