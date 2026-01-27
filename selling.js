@@ -159,7 +159,6 @@ postbtn.addEventListener("click", async (e) => {
     }
     //Saving the list to db
 
-    console.log(sellerName)
     const {
       data: { user },
     } = await supabase.auth.getUser();
