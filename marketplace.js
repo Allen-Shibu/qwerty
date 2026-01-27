@@ -91,42 +91,42 @@ console.log(WishlistBtn);
 
 let timeoutId;
 
-async function AddWish() {
-  const { data: products, error:productError } = await supabase.from("products").select("products.id");
-  const { data: auth, error:userError } = await supabase.from("auth").select("auth.users.id");
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-  if (!user) {
-    alert("You must be logged in to post!");
-    return;
-  }
+// async function AddWish() {
+//   const { data: products, error:productError } = await supabase.from("products").select("products.id");
+//   const { data: auth, error:userError } = await supabase.from("auth").select("auth.users.id");
+//   const {
+//     data: { user },
+//   } = await supabase.auth.getUser();
+//   if (!user) {
+//     alert("You must be logged in to post!");
+//     return;
+//   }
 
-  WishlistBtn.forEach((btn) => {
-    btn.addEventListener("click", async (e) => {
-      e.stopPropagation(); // prevents open of product details page
-      e.preventDefault(); //prevent scrolling when clicking the button
+//   WishlistBtn.forEach((btn) => {
+//     btn.addEventListener("click", async (e) => {
+//       e.stopPropagation(); // prevents open of product details page
+//       e.preventDefault(); //prevent scrolling when clicking the button
 
-      const { error: dbError } = await supabase.from("wishlist").insert([
-        {
-          product_id: e.target.dataset.id,
-          user_id: user.id,
-        },
-      ]);
+//       const { error: dbError } = await supabase.from("wishlist").insert([
+//         {
+//           product_id: e.target.dataset.id,
+//           user_id: user.id,
+//         },
+//       ]);
 
-      const products = {
-        image: card.querySelector("image_url").src,
+//       const products = {
+//         image: card.querySelector("image_url").src,
 
-        title: card.querySelector("p.font-bold").innerText,
+//         title: card.querySelector("p.font-bold").innerText,
 
-        price: card.querySelector(".text-green-600").innerText,
-      };
-      console.log("Thing worked ", products);
-    });
-  });
-}
+//         price: card.querySelector(".text-green-600").innerText,
+//       };
+//       console.log("Thing worked ", products);
+//     });
+//   });
+// }
 
-  AddWish();
+//   AddWish();
 
 
 function showNotification() {
@@ -165,47 +165,47 @@ function showAdNotification() {
   //   showAdNotification();   
   // }
 
-const WishGrid = document.querySelector(".wishlist-grid");
+// const WishGrid = document.querySelector(".wishlist-grid");
 
-if (WishGrid) {
-  const WishList = JSON.parse(localStorage.getItem("MyWishlist")) || [];
+// if (WishGrid) {
+//   const WishList = JSON.parse(localStorage.getItem("MyWishlist")) || [];
 
-  if (WishList.length == 0) {
-    WishGrid.innerHTML = `<p class="flex text-gray-500 text-2xl ">Your wishlist is empty.....</p>`;
-  } else {
-    WishList.forEach((products, index) => {
-      const card = document.createElement("div");
+//   if (WishList.length == 0) {
+//     WishGrid.innerHTML = `<p class="flex text-gray-500 text-2xl ">Your wishlist is empty.....</p>`;
+//   } else {
+//     WishList.forEach((products, index) => {
+//       const card = document.createElement("div");
 
-      card.innerHTML = `<div class="flex flex-row relative overflow-hidden rounded-2xl">
-                    <img src="${products.image_url[0]}" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
+//       card.innerHTML = `<div class="flex flex-row relative overflow-hidden rounded-2xl">
+//                     <img src="${products.image_url[0]}" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
                     
-                    <button onclick="removeFromWishlist(${index})" class="absolute top-3 right-3 bg-white p-2 rounded-full text-red-500 shadow-sm hover:bg-red-100">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
-                        </svg>
-                    </button>
-                  </div>
-                <div class="mt-3">
-                    <p class="font-bold text-lg dark:text-white">${products.title}</p>
-                    <span class="font-bold text-lg text-green-600">${products.price}</span>
-                </div>`;
+//                     <button onclick="removeFromWishlist(${index})" class="absolute top-3 right-3 bg-white p-2 rounded-full text-red-500 shadow-sm hover:bg-red-100">
+//                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+//                             <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+//                         </svg>
+//                     </button>
+//                   </div>
+//                 <div class="mt-3">
+//                     <p class="font-bold text-lg dark:text-white">${products.title}</p>
+//                     <span class="font-bold text-lg text-green-600">${products.price}</span>
+//                 </div>`;
 
-      WishGrid.appendChild(card);
-    });
-  }
-}
+//       WishGrid.appendChild(card);
+//     });
+//   }
+// }
 
-window.removeFromWishlist = function (index) {
-  let Wishlist = JSON.parse(localStorage.getItem("MyWishlist")) || [];
+// window.removeFromWishlist = function (index) {
+//   let Wishlist = JSON.parse(localStorage.getItem("MyWishlist")) || [];
 
-  //removes 1 item at the specific index
-  Wishlist.splice(index, 1);
+//   //removes 1 item at the specific index
+//   Wishlist.splice(index, 1);
 
-  // Save the new list back to storage
-  localStorage.setItem("MyWishlist", JSON.stringify(Wishlist));
+//   // Save the new list back to storage
+//   localStorage.setItem("MyWishlist", JSON.stringify(Wishlist));
 
-  location.reload();
-};
+//   location.reload();
+// };
 
 //loading products to main page\\
 async function loadProducts() {
