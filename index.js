@@ -24,7 +24,7 @@ async function signup() {
     password: password,
     name: name,
     options: {
-      emailRedirectTo: `${siteUrl}/market-place.html`,
+      emailRedirectTo: `${siteUrl}/login.html`,
       data: {
         display_name: name,
       },

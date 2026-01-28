@@ -6,17 +6,28 @@ async function fetchMyListings() {
     data: { user },
   } = await supabase.auth.getUser();
 
-  const { data: products, error } = await supabase.from("products").select("*")
-  .eq("seller_id", user.id); //filtering the 'products' table
-
   if (!user) {
-    alert("You must be logged in to post!");
+    alert("You must be logged in to see your listings!");
     return;
   }
 
+  const { data: products, error } = await supabase.from("products").select("*")
+    .eq("seller_id", user.id); //filtering the 'products' table
+  
   if (error) {
     alert(error);
-  } else {
+  } 
+  
+  // ProductGrid.innerHTML = "";
+  // if (products.length === 0) {
+  //   const card = document.createElement("div");
+  //   card.innerHTML = `<p class="dark:text-white text-gray-500 text-lg">Nothing to see here</p>`;
+
+  //   ProductGrid.appendChild(card);
+  // }
+
+  
+  else {
     products.forEach((products) => {
       const card = document.createElement("div");
 
